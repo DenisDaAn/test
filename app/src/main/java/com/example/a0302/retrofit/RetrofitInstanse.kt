@@ -7,7 +7,7 @@ import retrofit2.create
 object RetrofitInstanse {
     val retrofit by lazy{
         Retrofit.Builder()
-            .baseUrl("mskko2021.mad.hakta.pro/api/")
+            .baseUrl("http://mskko2021.mad.hakta.pro/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

@@ -15,6 +15,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        button.setOnClickListener { log() }
     }
 
     fun log() {
@@ -26,7 +27,10 @@ class LoginActivity : AppCompatActivity() {
             call.enqueue(object : Callback<LoginModelGet> {
                 override fun onResponse(call: Call<LoginModelGet>, response: Response<LoginModelGet>) {
                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                    val toast_yes = Toast.makeText(applicationContext, response.body()?.id.toString(), Toast.LENGTH_SHORT)
+                    toast_yes.show()
                     startActivity(intent)
+
                 }
                 override fun onFailure(call: Call<LoginModelGet>, t: Throwable) {
                     val toast = Toast.makeText(applicationContext, "не работает", Toast.LENGTH_SHORT)

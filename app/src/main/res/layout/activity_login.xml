@@ -11,7 +11,71 @@
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="100dp"
         app:srcCompat="@drawable/logo_login" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:textColor="@color/white"
+        android:fontFamily="@font/alegreya_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView3"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:text="Sign In"
+        android:textSize="30dp" />
+
+    <EditText
+        android:id="@+id/textLogin"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView3"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="@color/white"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textColorHint="@color/white" />
+
+    <EditText
+        android:id="@+id/textPassword"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textLogin"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/white"
+        android:hint="Пароль"
+        android:inputType="textPassword"
+        android:textColorHint="@color/white" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textPassword"
+        android:fontFamily="@font/alegreya_medium"
+        android:layout_marginLeft="40dp"
+        android:onClick="log"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/onboard_button"
+        android:text="Войти"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alegreya_medium"
+        android:layout_below="@id/button"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/onboard_button"
+
+        android:text="Register"
+        android:textColor="@color/white" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -22,16 +86,4 @@
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/group_login" />
 
-    <EditText
-        android:id="@+id/textLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Email"
-        android:inputType="textEmailAddress" />
-    <EditText
-        android:id="@+id/textPassword"
-        android:layout_width="wrap_content"
-        android:hint="Пароль"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword" />
 </RelativeLayout>

@@ -23,22 +23,25 @@ class LoginActivity : AppCompatActivity() {
         val password = textPassword.toString()
         if (!email.isEmpty()|| !password.isEmpty()) {
             val service = RetrofitInstanse.api
-            val call = service.login(LoginModelPost("wsr", "wsr"))
+            val call = service.login(LoginModelPost(email, password))
             call.enqueue(object : Callback<LoginModelGet> {
                 override fun onResponse(call: Call<LoginModelGet>, response: Response<LoginModelGet>) {
                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                    val toast_yes = Toast.makeText(applicationContext, response.body()?.id.toString(), Toast.LENGTH_SHORT)
-                    toast_yes.show()
+                    intent.putExtra("name", response.body()?.nickName.toString())
                     startActivity(intent)
 
                 }
                 override fun onFailure(call: Call<LoginModelGet>, t: Throwable) {
-                    val toast = Toast.makeText(applicationContext, "не работает", Toast.LENGTH_SHORT)
+                    val toast = Toast.makeText(applicationContext, "Ошибка сервера.", Toast.LENGTH_SHORT)
                     toast.show()
                 }
 
             })
 
+        }
+        else {
+            val toast = Toast.makeText(applicationContext, "Введеные данные некоректны.", Toast.LENGTH_SHORT)
+            toast.show()
         }
     }
 }
